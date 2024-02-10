@@ -45,9 +45,7 @@
  
 ## Introduction
 
-# General Software Design Patterns
-
-## Introduction
+Design patterns originated in Object-Oriented Programming (OOP), notably in languages like Java and C++, to address recurring design challenges, enhancing code reusability, maintainability, and scalability. Over time, the concept transcended OOP and became applicable to a broader range of programming languages, including those not inherently object-oriented.
 
 ## Creational Patterns
 
