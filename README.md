@@ -49,6 +49,8 @@ Design patterns originated in Object-Oriented Programming (OOP), notably in lang
 
 ## Creational Patterns
 
+Creational design patterns are like blueprints for creating objects in a way that's flexible, reusable, and organized. They help you manage the process of creating objects in your code. 
+
 ### Singleton Pattern
 #### Example A
 #### Example B
@@ -66,6 +68,9 @@ Design patterns originated in Object-Oriented Programming (OOP), notably in lang
 
 ## Structural Patterns
 
+
+Structural design patterns act like handy guides that simplify design tasks. They help arrange classes and objects to build bigger, more intricate structures, all while keeping the system flexible and efficient. These patterns provide solutions for organizing and combining different parts of your code, making it clearer, more reusable, and adaptable. 
+
 ### Facade Pattern
 #### Example A
 #### Example B
@@ -77,6 +82,8 @@ Design patterns originated in Object-Oriented Programming (OOP), notably in lang
 #### Example C
 
 ## Behavioural Patterns
+
+Behavioral design patterns are concerned with the interaction and responsibility of objects. They focus on defining how objects collaborate, communicate, and share responsibilities to achieve a more understandable and adaptable system. These patterns guide the dynamics of your software, shaping how different components work together to accomplish specific tasks. Imagine them as scripts that not only direct the interactions between actors but also outline their roles and responsibilities in the overall performance of your software play.
 
 ### Iterator Pattern
 #### Example A
