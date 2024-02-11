@@ -440,7 +440,7 @@ The builder pattern features a step-by-step construction of a complex object tha
 
 #### Example
 
-Let’s assume a business scenario of a publisher’s book backend entry system. Books have four required information: title, author, price, and category; we want to create a book object to return to the backend. Let’s dive into creating the object step by step using ES6 syntax combined with the builder pattern.
+Let’s assume a business scenario of a publisher’s book backend entry system. Books have four required information: title, author, price, and category; we want to create a book object to return to the backend.
 
 ```JS
 class BookBuilder {
