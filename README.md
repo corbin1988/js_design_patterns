@@ -275,6 +275,9 @@ Prototype is a creational design pattern that lets you copy existing objects wit
 
 In JavaScript, the prototype pattern is built into the language because JavaScript uses something called "prototypal inheritance." This means that every object in JavaScript is connected to a prototype object, which is like a blueprint. When you create a new object in JavaScript, it automatically inherits properties and methods from its blueprint, thanks to this prototypal inheritance. This natural connection makes implementing the prototype pattern straightforward in JavaScript.
 
+<img width="899" alt="Prototype_Pattern" src="https://github.com/corbin1988/js_design_patterns/assets/37128501/d75fea8f-8c86-4787-b3b0-b378edbcb99e">
+
+
 #### Real World Use Examples
 
 - **Photocopier Machine in an Office:** A photocopier machine serves as a prototype, and when multiple copies of a document are needed, users can simply duplicate the prototype to save time and resources, ensuring consistent copies.
