@@ -433,9 +433,66 @@ console.log(registrationFormValidation.rules);
 ```
 
 ### Builder Pattern
-#### Example A
-#### Example B
-#### Example C
+
+The Builder pattern separates the construction layer of a complex object from its representation layer, so that the same construction process can use different representations.
+
+The builder pattern features a step-by-step construction of a complex object that can be built in different combinations or sequences with different meanings. Usually the user does not need to know the details of the construction and usually uses chain calls to carry out the construction process and finally calls the build method to generate the final object.
+
+#### Example
+
+Let’s assume a business scenario of a publisher’s book backend entry system. Books have four required information: title, author, price, and category; we want to create a book object to return to the backend. Let’s dive into creating the object step by step using ES6 syntax combined with the builder pattern.
+
+```JS
+class BookBuilder {
+  constructor() {
+    this.name = '';
+    this.author = '';
+    this.price = 0;
+    this.category = '';
+  }
+  
+  withName(name) {
+    this.name = name;
+    return this;
+  }
+
+  withAuthor(author) {
+    this.author = author;
+    return this;
+  }
+
+  withPrice(price) {
+    this.price = price;
+    return this;
+  }
+
+  withCategory(category) {
+    this.category = category;
+    return  this;
+  }
+
+  build() {
+    return {
+      name: this.name,
+      author: this.author,
+      prices: this.price,
+      category: this.category
+    }
+  }
+}
+
+//Calling the builder class
+const book = new BookBuilder()
+  .withName("The Reckonings")
+  .withAuthor('Lacy Johnson')
+  .withPrice(31)
+  .withCategory('Literature')
+  .build();
+```
+
+### Factory Pattern
+
+
 
 ## Structural Patterns
 
