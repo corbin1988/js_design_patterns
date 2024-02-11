@@ -640,9 +640,77 @@ Behavioral design patterns are concerned with the interaction and responsibility
 #### Example C
 
 ### Observer Pattern
-#### Example A
-#### Example B
-#### Example C
+
+The Observer Design Pattern is a behavioral pattern that defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. In other words, it establishes a mechanism for a subject (or publisher) to notify multiple observers (or subscribers) about changes or events.
+
+<img width="1023" alt="Screenshot 2024-02-11 at 11 18 02 AM" src="https://github.com/corbin1988/js_design_patterns/assets/37128501/41007759-ae6e-4e8f-b6d7-6ddde711d486">
+
+##### Key components of the Observer pattern:
+
+- **Subject (or Observable):** This is the object that is being observed. It maintains a list of observers and notifies them of any changes in its state.
+- **Observer (or Subscriber):** This is the interface or abstract class that defines the method to be called when the subject's state changes. Multiple observers can subscribe to a subject.
+- **ConcreteSubject:** The concrete implementation of the subject. It holds the state and sends notifications to its observers when the state changes.
+- **ConcreteObserver:** The concrete implementation of the observer. It registers with the subject to receive notifications and implements the update method to respond to changes.
+
+
+#### Example: News Agency and Subscribers
+
+Let's consider a scenario where a news agency is the subject, and various news subscribers are the observers. When the news agency publishes a new article, all subscribers are notified.
+
+```JS
+// Subject: NewsAgency
+class NewsAgency {
+  constructor() {
+    this.subscribers = [];
+    this.latestNews = null;
+  }
+
+  subscribe(subscriber) {
+    this.subscribers.push(subscriber);
+  }
+
+  unsubscribe(subscriber) {
+    this.subscribers = this.subscribers.filter((sub) => sub !== subscriber);
+  }
+
+  publishNews(news) {
+    this.latestNews = news;
+    this.notifySubscribers();
+  }
+
+  notifySubscribers() {
+    this.subscribers.forEach((subscriber) => {
+      subscriber.update(this.latestNews);
+    });
+  }
+}
+
+// Observer: NewsSubscriber
+class NewsSubscriber {
+  constructor(name) {
+    this.name = name;
+  }
+
+  update(news) {
+    console.log(`${this.name} received the latest news: ${news}`);
+  }
+}
+
+// Example Usage
+const newsAgency = new NewsAgency();
+
+const subscriber1 = new NewsSubscriber('Subscriber 1');
+const subscriber2 = new NewsSubscriber('Subscriber 2');
+
+newsAgency.subscribe(subscriber1);
+newsAgency.subscribe(subscriber2);
+
+newsAgency.publishNews('Breaking News: Important Event');
+
+// Output:
+// Subscriber 1 received the latest news: Breaking News: Important Event
+// Subscriber 2 received the latest news: Breaking News: Important Event
+```
 
 ### Mediator
 #### Example A
