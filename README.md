@@ -492,10 +492,65 @@ const book = new BookBuilder()
 
 ### Factory Pattern
 
+The Factory Design Pattern is a creational pattern in software design that provides an interface for creating objects in a super class, but allows subclasses to alter the type of objects that will be created. It falls under the category of design patterns that deal with object creation mechanisms, forming a basis for code that is more understandable, flexible, and maintainable.
+
+#### Three main types of Factory Design Patterns
+
+- **Simple Factory:** A simple factory is not technically a design pattern but a method for creating objects. It involves a single factory class responsible for creating objects based on the input parameters. While simple, it doesn't adhere strictly to the principles of other design patterns.
+
+- **Factory Method:** The Factory Method pattern defines an interface for creating an object but leaves the choice of its type to the subclasses, creating an instance of one or more derived classes.
+
+- **Abstract Factory:** The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. It is often used to ensure the compatibility of created objects.
+
+#### Example
+
+```JS
+// Product Interface
+class Product {
+  getProductInfo() {
+    throw new Error("This method must be overridden by subclasses");
+  }
+}
+
+// Concrete Product
+class ConcreteProduct extends Product {
+  getProductInfo() {
+    return "Concrete Product";
+  }
+}
+
+// Creator Interface
+class Creator {
+  createProduct() {
+    throw new Error("This method must be overridden by subclasses");
+  }
+
+  operation() {
+    const product = this.createProduct();
+    return product.getProductInfo();
+  }
+}
+
+// Concrete Creator
+class ConcreteCreator extends Creator {
+  createProduct() {
+    return new ConcreteProduct();
+  }
+}
+
+// Example Usage
+const creator = new ConcreteCreator();
+const result = creator.operation();
+console.log(result); // Output: Concrete Product
+```
+
+- **Product:** Product is an interface or abstract class defining the product's interface.
+- **ConcreteProduct:** ConcreteProduct is a concrete implementation of the product interface.
+- **Creator:** Creator is an interface or abstract class declaring the factory method, which returns a Product object.
+- **ConcreteCreator:** ConcreteCreator is a concrete implementation of the creator interface, providing the implementation for the factory method.
 
 
 ## Structural Patterns
-
 
 Structural design patterns act like handy guides that simplify design tasks. They help arrange classes and objects to build bigger, more intricate structures, all while keeping the system flexible and efficient. These patterns provide solutions for organizing and combining different parts of your code, making it clearer, more reusable, and adaptable. 
 
